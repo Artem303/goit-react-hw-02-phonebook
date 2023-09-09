@@ -1,8 +1,8 @@
-import CSS from './Contacts.css';
+import css from './Contacts.module.css';
 
 export const Contacts = ({ stateArr, deleteContact }) => {
   return (
-    <ul className="contactList">
+    <ul className={css.contactList}>
       {stateArr.map(({ name, number, id }) => (
         <li key={id}>
           <p>

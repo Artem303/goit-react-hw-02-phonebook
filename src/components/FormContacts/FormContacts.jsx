@@ -1,6 +1,6 @@
 import React from 'react';
 
-import css from './FormContacts.css';
+import css from './FormContacts.module.css';
 
 export class FormContactInput extends React.Component {
   state = {
@@ -27,7 +27,7 @@ export class FormContactInput extends React.Component {
   render() {
     const { name, number } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} className="form">
+      <form onSubmit={this.handleSubmit} className={css.form}>
         <label htmlFor="">
           <h3>Name</h3>
           <input
