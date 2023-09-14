@@ -15,6 +15,18 @@ class App extends React.Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const localStorageContacts = JSON.parse(localStorage.getItem('contacts'));
+    console.log(localStorageContacts);
+    this.setState({ contacts: localStorageContacts });
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
+
   formSubmit = data => {
     const repeatContact = this.state.contacts.find(
       contact => contact.name === data.name
